@@ -1,12 +1,47 @@
-# React + Vite
+# Firebase Bookstore
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Single-page React app for browsing and managing a Firebase-backed bookstore.
 
-Currently, two official plugins are available:
+## Local Development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+npm install
+npm run dev
+```
 
-## Expanding the ESLint configuration
+Build a production-ready bundle with:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm run build
+```
+
+Preview the built bundle locally at `http://localhost:4173`:
+
+```bash
+npm run preview
+```
+
+## Deploying to GitHub Pages
+
+The live site is hosted on GitHub Pages and the code resides at `https://github.com/lightp0x/firebasebookstore`.
+
+1. Ensure the repository is initialized locally and connected (first-time setup only):
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git branch -M main
+   git remote add origin https://github.com/lightp0x/firebasebookstore.git
+   git push -u origin main
+   ```
+2. Build the production bundle:
+   ```bash
+   npm run build
+   ```
+3. Deploy the contents of `dist/` to the `gh-pages` branch:
+   ```bash
+   npm run deploy
+   ```
+4. In GitHub, open **Settings → Pages** and point the site to the `gh-pages` branch (root folder). The URL will be `https://lightp0x.github.io/firebasebookstore/` once the publish completes.
+
+> Note: `vite.config.js` already includes `base: '/firebasebookstore/'` so assets resolve correctly on GitHub Pages.
